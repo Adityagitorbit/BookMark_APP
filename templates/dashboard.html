@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Bookmark Manager{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/dashboard.css">
+<div class="dashboard-container">
+    <h2>Welcome, {{ current_user.username }}</h2>
+    
+    <!-- Bookmark Creation Form -->
+    <section class="add-bookmark">
+        <h3>Add New Bookmark</h3>
+        <form id="add-bookmark-form">
+            <input type="text" id="bookmark-title" placeholder="Bookmark Title" required>
+            <input type="url" id="bookmark-url" placeholder="Bookmark URL" required>
+            <input type="text" id="bookmark-description" placeholder="Description">
+            <button type="submit">Add Bookmark</button>
+        </form>
+    </section>
+
+    <!-- Bookmark Categories -->
+    <section class="categories">
+        <h3>Categories</h3>
+        <ul id="categories-list">
+            <!-- Categories will be dynamically loaded here -->
+        </ul>
+    </section>
+
+    <!-- Bookmark List -->
+    <section class="bookmarks">
+        <h3>Your Bookmarks</h3>
+        <ul id="bookmarks-list">
+            <!-- Bookmarks will be dynamically loaded here -->
+        </ul>
+    </section>
+</div>
+
+<!-- JavaScript for Dashboard -->
+<script src="/static/js/dashboard.js"></script>
+{% endblock %}
