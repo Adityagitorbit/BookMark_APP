@@ -629,11 +629,17 @@
 /* Define to 1 if you have the <libutil.h> header file. */
 /* #undef HAVE_LIBUTIL_H */
 
+/* Define to 1 if you have the `uuid' library (-luuid). */
+#define HAVE_LIBUUID 1
+
 /* Define if you have the 'link' function. */
 #define HAVE_LINK 1
 
 /* Define to 1 if you have the `linkat' function. */
 #define HAVE_LINKAT 1
+
+/* Define to 1 if you have the <linux/auxvec.h> header file. */
+#define HAVE_LINUX_AUXVEC_H 1
 
 /* Define to 1 if you have the <linux/can/bcm.h> header file. */
 #define HAVE_LINUX_CAN_BCM_H 1
@@ -903,6 +909,9 @@
 /* Define to 1 if you have the `sched_setscheduler' function. */
 #define HAVE_SCHED_SETSCHEDULER 1
 
+/* Define to 1 if you have the `sem_clockwait' function. */
+/* #undef HAVE_SEM_CLOCKWAIT */
+
 /* Define to 1 if you have the `sem_getvalue' function. */
 #define HAVE_SEM_GETVALUE 1
 
@@ -1119,6 +1128,9 @@
 
 /* Define to 1 if you have the <sys/audioio.h> header file. */
 /* #undef HAVE_SYS_AUDIOIO_H */
+
+/* Define to 1 if you have the <sys/auxv.h> header file. */
+#define HAVE_SYS_AUXV_H 1
 
 /* Define to 1 if you have the <sys/bsdtty.h> header file. */
 /* #undef HAVE_SYS_BSDTTY_H */
@@ -1510,6 +1522,9 @@
    (which you can't on SCO ODT 3.0). */
 #define SYS_SELECT_WITH_SYS_TIME 1
 
+/* Custom thread stack size depending on chosen sanitizer runtimes. */
+/* #undef THREAD_STACK_SIZE */
+
 /* Library needed by timemodule.c: librt may be needed for clock_gettime() */
 /* #undef TIMEMODULE_LIB */
 
@@ -1647,11 +1662,6 @@
 
 /* Define on FreeBSD to activate all library features */
 #define __BSD_VISIBLE 1
-
-/* Define to 1 if type `char' is unsigned and you are not using gcc.  */
-#ifndef __CHAR_UNSIGNED__
-/* # undef __CHAR_UNSIGNED__ */
-#endif
 
 /* Define to 'long' if <time.h> doesn't define. */
 /* #undef clock_t */
